@@ -1,4 +1,4 @@
-```markdown
+
 # Fintech Banking API
 
 A NestJS-based API for a fintech banking mobile application, featuring user authentication, payment processing, notifications, receipts, and reviews. This project uses PostgreSQL as the database and includes Swagger documentation and end-to-end (E2E) tests.
@@ -147,9 +147,6 @@ Explore all endpoints via Swagger UI at `http://localhost:3000/api`. Key endpoin
 
 ## Support
 For issues or enhancements, open a GitHub issue or contact the maintainers.
-```
-
----
 
 ### Notes on Implementation
 1. **No Docker**: This `README.md` assumes a local PostgreSQL installation, removing all Docker-related instructions.

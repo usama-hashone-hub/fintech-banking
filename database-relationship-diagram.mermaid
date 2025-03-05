@@ -1,0 +1,63 @@
+erDiagram
+    USER ||--o{ NOTIFICATION : generates
+    USER ||--o{ PAYMENT : makes
+    USER ||--o{ CARD : owns
+    USER ||--o{ REVIEW : writes
+
+    PAYMENT ||--|| RECEIPT : has
+    PAYMENT ||--o{ REVIEW : receives
+
+    USER {
+        uuid id PK
+        string email
+        string phone
+        string name
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    NOTIFICATION {
+        uuid id PK
+        uuid user_id FK
+        string message
+        string type
+        string status
+        timestamp created_at
+    }
+
+    PAYMENT {
+        uuid id PK
+        uuid user_id FK
+        decimal amount
+        string currency
+        string method
+        string status
+        string merchant_qr_code
+        timestamp created_at
+    }
+
+    CARD {
+        uuid id PK
+        uuid user_id FK
+        string card_number
+        date expiry_date
+        string cvv
+        timestamp created_at
+    }
+
+    RECEIPT {
+        uuid id PK
+        uuid payment_id FK
+        json details
+        string status
+        timestamp created_at
+    }
+
+    REVIEW {
+        uuid id PK
+        uuid payment_id FK
+        uuid user_id FK
+        integer rating
+        string comment
+        timestamp created_at
+    }
